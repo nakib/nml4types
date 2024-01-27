@@ -1,2 +1,2 @@
-# nml_reader
+# nml4types
 Sick and tired using temporary variables to read nml files into members of derived types? The pain ends here...

@@ -1,5 +1,5 @@
 program main
-  use nml_reader
+  use nml4types
 
   implicit none
 
