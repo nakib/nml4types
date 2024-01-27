@@ -1,0 +1,16 @@
+name = "nml_reader"
+version = "0.1.0"
+license = "license"
+author = "Nakib H. Protik"
+maintainer = "nakib.haider.protik@gmail.com"
+copyright = "Copyright 2024, Nakib H. Protik"
+[build]
+auto-executables = true
+auto-tests = false
+[install]
+library = true
+[fortran]
+implicit-typing = false
+implicit-external = true
+source-form = "free"
+
