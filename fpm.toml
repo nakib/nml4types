@@ -1,6 +1,6 @@
 name = "nml4types"
 version = "0.1.0"
-license = "license"
+license = "GNU GPL3+"
 author = "Nakib H. Protik"
 maintainer = "nakib.haider.protik@gmail.com"
 copyright = "Copyright 2024, Nakib H. Protik"
