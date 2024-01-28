@@ -10,19 +10,22 @@ program main
   end type data
   
   type(data) :: d
-
-  call read_from_input(d)
-
-
+  character(:), allocatable :: input_file
+  
+  input_file = "example_input.nml"
+  
+  call read_from_input(d, input_file)
+  
   print*, "Read the following from the input file:"
   print*, "i = ", d%i
   print*, "r = ", d%r
   print*, "s = ", d%s
-
+  
 contains
 
-  subroutine read_from_input(this)
+  subroutine read_from_input(this, parent_nml_file)
     type(data), intent(inout) :: this
+    character(*), intent(in) :: parent_nml_file
 
     integer :: ifile
     character(:), allocatable :: group_nml_file
@@ -30,9 +33,8 @@ contains
     namelist /params/ this
     
     call get_group_nml_file(group = 'params', obj = 'this', &
-         parent_nml_file = 'input.nml', child_nml_file = group_nml_file)
-
-    print*, group_nml_file
+         parent_nml_file = parent_nml_file, &
+         child_nml_file = group_nml_file)
 
     open(newunit = ifile, file = group_nml_file, &
          status = 'old', action = 'read')
