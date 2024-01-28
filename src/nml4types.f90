@@ -32,9 +32,9 @@ contains
     !
     !<child_nml_file>:
     !&<group>
-    !<obj>%i = 420
+    !<obj>%i = 1
     !<some spaces>
-    !<obj>%r = 69.69 !inline comment
+    !<obj>%r = -99.99 !inline comment
     !<obj>%s = 'jklolz'
     !/
     
