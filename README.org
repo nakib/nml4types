@@ -3,11 +3,11 @@ Sick and tired using temporary variables to read nml files into members of deriv
 
 ** The issue
 
-The built-in namelist (~nml~) reader of Fortran is quite nice and capable. It does, however, have certain drawbacks. For example, it is difficult to read the full list of variables from an ~nml~ group into members of a derived type object. The techinical reason for this is that the language does not allow reading into an ~nml~ defined from a polymorphic type.
+The built-in namelist (~nml~) reader of Fortran is quite nice and capable. It does, however, have certain drawbacks. For example, it is difficult to read the full list of variables from an ~nml~ group into members of a derived type object. The technical reason for this is that the language does not allow reading into an ~nml~ defined from a polymorphic type.
 
-Don't believe me? Try to write an ~nml~ reader where you pass your data type in as ~class(*)~. Go on! What's that? You want to extend your data type into a ~nml_readable~ type and pass that in instead? Well, try it! Are you now mumbling something about using an ~association~ block? Won't work. How about pointer association, type check, and a ~block~? Still no.
+Don't believe me? Try to write an ~nml~ reader where you pass your data type in as ~class(*)~. Go on...give it a try! What's that? You want to extend your data type into a ~nml_readable~ type and pass that in instead? Well, try it! Are you now mumbling something about using an ~association~ block? Won't work. How about pointer association, type check, and a ~block~? Still no.
 
-Practically, what this means is that a bunch of temporary variable have to be defined to read the ~nml~ variables before copying them into the appropriate members of some derived type object. It gets pretty tedious pretty quickly...
+Practically, what this means is that a bunch of temporary variables have to be defined to read the ~nml~ variables before copying them into the appropriate members of some derived type object. It gets pretty tedious pretty quickly...
 
 ** A solution
 

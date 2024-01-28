@@ -15,7 +15,7 @@ contains
 
     child_nml_file = trim(adjustl(group)) // ".nml"
 
-    !Use awk/sed magic to create a temporary input file
+    !Use awk/sed magic to create a child input file
     !which takes the following:
     !
     !<parent_nml_file>:
@@ -38,7 +38,7 @@ contains
     !<obj>%s = 'jklolz'
     !/
     
-    !Copy relevant data from input_raw.nml to scratch.nml:
+    !Copy specified group data from parent to child:
     awk_command = "awk 'tolower($0) ~ /^&" // &
          trim(adjustl(group)) // "$/{flag=1;next} " &
          //"tolower($0) ~ /^(\/|&end|\$end)$/{flag=0}flag' " // &
